@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Main page</title>
+    <style>
+        div {
+        border: 2px solid black;
+        }
+        img {
+        width: 250px;
+        height: 250px;
+        }
+    </style>
+</head>
+<body>
+<h2>Messages</h2>
+<form method="post" action="/add_message">
+    <input type="text" name="text">
+    <input type="url" name="meme">
+    <button type="submit">Add message</button>
+</form>
+
+<h3>Messages list</h3>
+{% for message in messages %}
+<div><b>{{ message.user }}</b><p>{{ message.text }}</p> <img src="{{ message.meme }}"/></div>
+{% endfor %}
+
+</body>
+</html>
