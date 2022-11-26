@@ -2,10 +2,23 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Greetings</title>
+    <style>
+        div {
+        border: 1px solid black;
+        }
+        img {
+        width: 250px;
+        height: 250px;
+        }
+    </style>
 </head>
 <body>
 <h1>Hello, user</h1>
-<a href="{{ url_for('main') }}">Main page</a>
+<a href="{{ url_for('make_post') }}">Main page</a>
+
+<h3>Messages list</h3>
+{% for message in messages %}
+<div><h4>{{ message.user }}</h4><p><img src="img/{{ message.meme }}"/> {{ message.text }}</p></div>
+{% endfor %}
 </body>
 </html>
