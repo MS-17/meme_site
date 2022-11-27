@@ -2,23 +2,52 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <style>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/meme.css') }}">
+    <!--<style>
         div {
-        border: 1px solid black;
+            border: 1px solid black;
         }
         img {
-        width: 250px;
-        height: 250px;
+            width: 250px;
+            height: 250px;
         }
-    </style>
+    </style>-->
 </head>
 <body>
-<h1>Hello, user</h1>
-<a href="{{ url_for('make_post') }}">Main page</a>
+    <!--<h1>Hello, user</h1>
+    <a href="{{ url_for('make_post') }}">Main page</a>-->
+    <header>
+        <p> <b>КРИНЖУЛИ</b> <font color="red">online</font></p>
+        <div class="make-post"><a href="{{ url_for('make_post') }}">+</a></div>
+    </header>
+    <main>
+        <div class="div">
+            <p class="p">Лента</p>
 
-<h3>Messages list</h3>
-<!--{% for message in messages %}-->
-<div><h4>{{ message.user }}</h4><p><img src="img/{{ message.meme }}"/> {{ message.text }}</p></div>
-<!--{% endfor %}-->
+            {% for message in messages %}
+            <div>
+                <h4>{{ message.user }}</h4><p><img src="img/{{ message.meme }}"/> {{ message.text }}</p>
+                <form action="/" method="post">
+                    <div>{{message.likes}}</div>
+                    <input type="text" name="post_id" value="{{message.post_id}}" style="display: none">
+                    <input type="text" name="likes" value="{{message.likes}}" style="display: none">
+                    <button type="submit">Like</button>
+                </form>
+                <form action="/" method="post">
+                    <div>{{message.dislikes}}</div>
+                    <input type="text" name="post_id" value="{{message.post_id}}" style="display: none">
+                    <input type="text" name="dislikes" value="{{message.dislikes}}" style="display: none">
+                    <button type="submit">Dislike</button>
+                </form>
+            </div>
+            {% endfor %}
+
+        </div>
+    </main>
+<!--    <h3>Messages list</h3>-->
+
+    <footer>
+            <p>Главные кринжули: златик2004, Катюшка_love, !Серёга228</p>
+    </footer>
 </body>
 </html>

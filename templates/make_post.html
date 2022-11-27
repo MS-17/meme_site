@@ -1,16 +1,37 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+
     <meta charset="UTF-8">
-    <title>Main page</title>
+    <title>Make post</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/meme.css') }}">
 
 </head>
 <body>
-<h2>Messages</h2>
-<form method=post enctype=multipart/form-data action="/add_post">
-    <input type="text" name="text">
-    <input type="file" name="meme">
-    <button type="submit">Add message</button>
-</form>
+    <header>
+        <p> <b>КРИНЖУЛИ</b> <font color="red">online</font></p>
+    </header>
+
+    <main>
+        <div class="div">
+            <p class="p">Создать пост</p>
+            <form class="download-form" method=post enctype=multipart/form-data action="/add_post">
+                <input type="text" placeholder="текст" name="text">
+                <input type="file" name="meme">
+                <button type="submit">Опубликовать</button>
+            </form>
+
+        </div>
+    </main>
+    <footer>
+        <p>Главные кринжули: златик2004, Катюшка_love, !Серёга228</p>
+    </footer>
+
+    <!--<form method=post enctype=multipart/form-data action="/add_post">
+        <input type="text" name="text">
+        <input type="file" name="meme">
+        <button type="submit">Add message</button>
+    </form>-->
+
 </body>
 </html>

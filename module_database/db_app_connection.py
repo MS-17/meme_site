@@ -13,3 +13,18 @@ def get_db(path_to_db):
 def get_last_row(path_to_db):
     connection = idb.connect_db(path_to_db)
     return idb.get_last_row(connection)
+
+
+def add_likes(path_to_db, id):
+    connection = idb.connect_db(path_to_db)
+    connection.execute(f'update posts set likes = likes + 1 where id = {id}')
+    connection.commit()
+    connection.close()
+
+
+def add_dislikes(path_to_db, id):
+    connection = idb.connect_db(path_to_db)
+    connection.execute(f'update posts set dislikes = dislikes + 1 where id = {id}')
+    connection.commit()
+    connection.close()
+
