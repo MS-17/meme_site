@@ -73,8 +73,8 @@ main {
     flex: 1 0 auto;
 }
 .div {
-    width: 50%;
-    margin: 0 25%;
+    width: 40%;
+    margin: 0 30%;
     display: flex;
     flex-direction: column;
 }
@@ -107,7 +107,7 @@ main {
         margin:0 0 20px 20px;
     }
 .div img {
-    width: 70%;
+    width: 100%-40px;
     height: auto;
     margin: 0 20px 20px 20px;
 }
@@ -151,7 +151,7 @@ button {
 }
 input{
     font-size:16px;
-    margin:0 0 0 10px;
+    margin:0 0 0 20px;
 }
 
 footer {
@@ -171,7 +171,7 @@ margin-left: 30px;
 margin-left: 30px;
 }
 .likes {
-margin-left: 60px;
+margin-left: 30px;
 }
 
 .dislikes{
