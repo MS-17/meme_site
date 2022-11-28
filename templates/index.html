@@ -25,15 +25,15 @@
             <p class="p">Лента</p>
 
             {% for message in messages %}
-            <div>
-                <h4>{{ message.user }}</h4><p><img src="img/{{ message.meme }}"/> {{ message.text }}</p>
-                <form action="/" method="post">
+            <div class='post'>
+                <h4>{{ message.user }}</h4><p class="text">{{ message.text }}</p><p><img src="img/{{ message.meme }}"/></p>
+                <form action="/" method="post" class="likes">
                     <div>{{message.likes}}</div>
                     <input type="text" name="post_id" value="{{message.post_id}}" style="display: none">
                     <input type="text" name="likes" value="{{message.likes}}" style="display: none">
                     <button type="submit">Like</button>
                 </form>
-                <form action="/" method="post">
+                <form action="/" method="post" class="dislikes">
                     <div>{{message.dislikes}}</div>
                     <input type="text" name="post_id" value="{{message.post_id}}" style="display: none">
                     <input type="text" name="dislikes" value="{{message.dislikes}}" style="display: none">
