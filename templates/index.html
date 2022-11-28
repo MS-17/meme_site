@@ -26,7 +26,7 @@
 
             {% for message in messages %}
             <div class='post'>
-                <h4>{{ message.user }}</h4><p class="text">{{ message.text }}</p><p><img src="img/{{ message.meme }}"/></p>
+                <h4>{{ message.user }}</h4><p class="text">{{ message.text }}</p><div class="div"><img src="img/{{ message.meme }}"/></div>
                 <form action="/" method="post" class="likes">
                     <div>{{message.likes}}</div>
                     <input type="text" name="post_id" value="{{message.post_id}}" style="display: none">
