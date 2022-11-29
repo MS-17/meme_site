@@ -8,14 +8,14 @@ body {
     flex-direction: column;
     min-height: 100%;
     font-family: Arial;
-    background-image: url(back.png);
+    background-image: url(../img/back.png);
 }
 
 header {
     background-color: yellowgreen;
     background-image: url(fire.png);
     width: 100%;
-    height:5em;
+    height:4em;
     position: fixed;
     top: 0;
 }
@@ -23,7 +23,7 @@ header {
         text-align: center;
         font-weight: 400;
         font-size: 2em;
-        margin:24px;
+        margin:14px;
     }
 
 .make-post{
@@ -32,7 +32,7 @@ header {
     width:80px;
     height:50px;
     border-radius:50%;
-    top:1em;
+    top:0.5em;
     right:5em;
 }
     .make-post a::after {
@@ -67,14 +67,14 @@ header {
 }
 
 main {
-    margin-top: 5em;
-    padding-bottom: 4em;
+    margin-top: 4em;
+    padding-bottom: 2em;
     font-size: 24px;
     flex: 1 0 auto;
 }
 .div {
-    width: 50%;
-    margin: 0 25%;
+    width: 30%;
+    margin: 0 35%;
     display: flex;
     flex-direction: column;
 }
@@ -99,43 +99,23 @@ main {
     border: 1px solid black;
     border-radius: 20px;
     padding: 20px 0;
-    margin-bottom: 30px;
+    margin-bottom: 50px;
     display: flex;
     flex-direction: column;
 }
     .post p {
-        margin:0 0 20px 20px;
+        margin:0 0 20px 40px;
     }
-.div img {
-    width: 70%;
+.img-cont{
+    margin:0 40px 20px 40px;
+}
+.img-cont img {
+    width: 100%;
     height: auto;
-    margin: 0 20px 20px 20px;
 }
-.checkbox-btn {
-    display: inline-block;
-    margin: 0 0 0 20px;
-    user-select: none;
-    position: relative;
-}
-    .checkbox-btn input[type=checkbox] {
-        z-index: -1;
-        opacity: 0;
-        display: block;
-        width: 0;
-        height: 0;
-    }
-.checkbox-btn span {
-    display: inline-block;
-    cursor: pointer;
-    padding: 5px 10px;
-    line-height: 30px;
-    border: 1px solid #999;
-    border-radius: 10px;
-    transition: background 0.2s ease;
-}
-/* Checked */
-.checkbox-btn input[type=checkbox]:checked + span {
-    background-color:red;
+.like-dislike{
+    display:flex;
+    flex-direction:row;
 }
 
 button {
@@ -147,20 +127,32 @@ button {
     text-transform: uppercase;
     font-weight: bold;
     color: white;
-    margin: 0 0 0 10px;
+    margin: 0 0 0 20px;
 }
-input{
+input, .mk-post{
     font-size:16px;
-    margin:0 0 0 10px;
+    margin:0 0 0 20px;
 }
 
 footer {
     background-color: yellowgreen;
-    height: 5em;
+    height: 4em;
     flex: 0 0 auto;
     width: 100%;
 }
 footer p{
     font-size:24px;
     text-align: center;
+    margin:18px;
+}
+h4{
+margin: 0 0 20px 30px;
+}
+
+.likes {
+margin-left: 40px;
+}
+
+.dislikes{
+margin-left: 30px;
 }
