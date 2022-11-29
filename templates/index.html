@@ -14,20 +14,24 @@
             <p class="p">Лента</p>
 
             {% for message in messages %}
-            <div>
-                <h4>{{ message.user }}</h4><p><img src="img/{{ message.meme }}"/> {{ message.text }}</p>
-                <form action="/" method="post">
-                    <div>{{message.likes}}</div>
-                    <input type="text" name="post_id" value="{{message.post_id}}" style="display: none">
-                    <input type="text" name="likes" value="{{message.likes}}" style="display: none">
-                    <button type="submit">Like</button>
-                </form>
-                <form action="/" method="post">
-                    <div>{{message.dislikes}}</div>
-                    <input type="text" name="post_id" value="{{message.post_id}}" style="display: none">
-                    <input type="text" name="dislikes" value="{{message.dislikes}}" style="display: none">
-                    <button type="submit">Dislike</button>
-                </form>
+            <div class='post'>
+                <h4>{{ message.user }}</h4>
+                <p>{{ message.text }}</p>
+                <div class="img-cont"><img src="img/{{ message.meme }}"/></div>
+                <div class="like-dislike">
+                    <form action="/" method="post" class="likes">
+                        <div>{{message.likes}}</div>
+                        <input type="text" name="post_id" value="{{message.post_id}}" style="display: none">
+                        <input type="text" name="likes" value="{{message.likes}}" style="display: none">
+                        <button type="submit">нрав</button>
+                    </form>
+                    <form action="/" method="post" class="dislikes">
+                        <div>{{message.dislikes}}</div>
+                        <input type="text" name="post_id" value="{{message.post_id}}" style="display: none">
+                        <input type="text" name="dislikes" value="{{message.dislikes}}" style="display: none">
+                        <button type="submit">ненрав</button>
+                    </form>
+                </div>
             </div>
             {% endfor %}
 
