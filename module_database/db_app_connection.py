@@ -1,4 +1,4 @@
-import meme_site.module_database.init_db as idb
+import module_database.init_db as idb
 
 
 def push_post(path_to_db, table_name, user, text, meme):

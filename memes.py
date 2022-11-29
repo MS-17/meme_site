@@ -4,17 +4,17 @@ from flask import Flask, render_template, request, flash, redirect
 from werkzeug.utils import secure_filename
 from flask import send_from_directory
 from werkzeug.middleware.shared_data import SharedDataMiddleware
-from meme_site.module_database import db_app_connection as db_conn
+from module_database import db_app_connection as db_conn
 
 Message = namedtuple('Message', 'user text meme post_id likes dislikes')
 messages = []
 user = '@dDmIn4iK2007_XD'
 
 working_dir = str(os.path.dirname(__file__))
+# folder = os.path.normpath('/module_database/img')
 folder = '/module_database/img'
 full_path = working_dir + folder
-# UPLOAD_FOLDER = r'C:\Users\lynnk\OneDrive\Рабочий стол\Домашка\memes\img'  # сюда полный путь к папке для картинок
-UPLOAD_FOLDER = full_path  # сюда полный путь к папке для картинок
+UPLOAD_FOLDER = full_path
 ALLOWED_EXTENSIONS = {'png', 'jpg', 'jpeg', 'gif'}
 
 
@@ -83,7 +83,6 @@ def add_message():
             meme.save(os.path.join(app.config['UPLOAD_FOLDER'], filename))
 
         text = request.form['text']
-        # messages.append(Message(user, text, filename))
 
         db_conn.push_post('module_database/database.db', 'posts', user, text, meme.filename)
 
@@ -95,7 +94,6 @@ def add_message():
             dislikes = data[post_id][5]
             messages.append(Message(user, text, meme, post_id, likes, dislikes))
 
-    # return render_template('index.html', messages=messages)
     return redirect('/')
 
 
@@ -110,16 +108,6 @@ app.wsgi_app = SharedDataMiddleware(app.wsgi_app, {
 })
 
 
-# @app.route('/add_like', methods=['GET', 'POST'])
-# def add_like():
-#
-
-
 if __name__ == '__main__':
     app.run(debug=True)
-
-
-# print(os.path.dirname())
-# print(os.path.dirname(__file__))
-# print(os.path.dirname(os.path.realpath(__file__)))
 
